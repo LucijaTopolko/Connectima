@@ -4,15 +4,14 @@ import logo from '../connectima.png';
 
 const Footer = () => {
     return (
-        <div className='footer-container'>
             <div className='footer'>
                 <div className='footer-columns'>
-                    <div className='footer-logo'>
+                    <div className='el footer-logo'>
                         <img src={logo} alt={"connectima."}/>
                     </div>
-                    <div className='empty'></div>
-                    <div className='empty'></div>
-                    <div className='footer-links'>
+                    <div className='el empty'></div>
+                    <div className='el empty'></div>
+                    <div className='el footer-links'>
                         <a>FAQ</a>
                         <a>Customer Support</a>
                         <a>User Guide</a>
@@ -21,10 +20,9 @@ const Footer = () => {
                 </div>
                 <div className='footer-copyright'>
                     <hr />
-                    <p>Copyright @2024 - All rights reserved</p>
+                    <p>©2024 - All rights reserved</p>
                 </div>
             </div>
-        </div>
     );
 };
 export default Footer;
