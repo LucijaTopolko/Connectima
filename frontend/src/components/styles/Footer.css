@@ -85,4 +85,14 @@
     .el{
         width: 100%;
     }
+    .empty{
+        width: 0;
+        height: 0;
+    }
+    .footer-copyright{
+        margin-top: 100px;
+    }
+    .footer-links a{
+        text-align: center;
+    }
 }
