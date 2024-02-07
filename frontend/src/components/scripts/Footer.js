@@ -3,26 +3,31 @@ import '../styles/Footer.css';
 import logo from '../connectima.png';
 
 const Footer = () => {
+
+    const handleClick = () => {
+        window.location.href = "/";
+    };
+
     return (
-            <div className='footer'>
+            <footer className='footer'>
                 <div className='footer-columns'>
                     <div className='el footer-logo'>
-                        <img src={logo} alt={"connectima."}/>
+                        <img src={logo} alt="connectima." onClick={handleClick}/>
                     </div>
                     <div className='el empty'></div>
                     <div className='el empty'></div>
                     <div className='el footer-links'>
-                        <a>FAQ</a>
-                        <a>Customer Support</a>
-                        <a>User Guide</a>
-                        <a>Contact Us</a>
+                        <a href='/faq'>FAQ</a>
+                        <a href='/support'>Customer Support</a>
+                        <a href='/guide'>User Guide</a>
+                        <a href='/contact'>Contact Us</a>
                     </div>
                 </div>
                 <div className='footer-copyright'>
                     <hr />
                     <p>©2024 - All rights reserved</p>
                 </div>
-            </div>
+            </footer>
     );
 };
 export default Footer;
