@@ -22,22 +22,16 @@ public class JWTGenerator {
         String username = authentication.getName();
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 
-        System.out.println("Authorities in generateToken: " + authorities);
-        System.out.println("Username: " + username);
-
         Date currentDate = new Date();
         Date expireDate = new Date(currentDate.getTime() + SecurityConstants.JWT_EXPIRATION);
 
         String token = Jwts.builder()
                 .setSubject(username)
-                .claim("authorities", authorities) // Add authorities to the claims
+                .claim("authorities", authorities)
                 .setIssuedAt(new Date())
                 .setExpiration(expireDate)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
-
-        System.out.println("New token:");
-        System.out.println(token);
 
         return token;
     }

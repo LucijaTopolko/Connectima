@@ -29,17 +29,10 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
         String token = getJWTFromRequest(request);
 
-        System.out.println("String token = getJWTFromRequest(request); "+ getJWTFromRequest(request));
-
         if(StringUtils.hasText(token) && tokenGenerator.validateToken(token)) {
             String username = tokenGenerator.getUsernameFromJWT(token);
 
-            System.out.println("I am in doFilterInternal, username is "+ username);
-
             UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-
-            // Log the authorities
-            System.out.println("Authorities in doFilterInternal: " + userDetails.getAuthorities());
 
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                     userDetails, null, userDetails.getAuthorities());
@@ -53,7 +46,6 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     private String getJWTFromRequest(HttpServletRequest request) {
         String bearerToken = request.getHeader("Authorization");
-        System.out.println("This is full token in getJWTFromRequest: " + bearerToken);
         if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7, bearerToken.length());
         }
