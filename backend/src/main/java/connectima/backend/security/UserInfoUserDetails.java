@@ -1,9 +1,6 @@
 package connectima.backend.security;
 
-import connectima.backend.login.entity.Login;
 import connectima.backend.user.entity.User;
-import connectima.backend.user.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -21,10 +18,10 @@ public class UserInfoUserDetails implements UserDetails {
     private User user;
     private List<GrantedAuthority> authorities;
 
-    public UserInfoUserDetails(User user, String password) {
+    public UserInfoUserDetails(User user) {
 
         username=user.getUsername();
-        this.password=password;
+        password=user.getPassword();
 
         /*
         authorities = Arrays.stream(user.getTypeOfUser().toUpperCase().split(","))

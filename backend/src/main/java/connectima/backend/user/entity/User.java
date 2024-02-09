@@ -27,6 +27,8 @@ public class User {
 
     private LocalDate membership;
 
+    private String password;
+
     public User() {
 
     }
@@ -83,5 +85,13 @@ public class User {
 
     public void setMembership(LocalDate membership) {
         this.membership = membership;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
