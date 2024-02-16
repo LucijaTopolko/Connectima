@@ -3,7 +3,7 @@ import Home from "./components/scripts/Home";
 import Logout from "./components/scripts/Logout";
 import Login from "./components/scripts/Login";
 import Register from "./components/scripts/Register";
-import ContactUs from "./components/scripts/ContactUs";
+import FAQ from "./components/scripts/FAQ";
 
 function App() {
   const accessToken = localStorage.getItem('accessToken');
@@ -16,7 +16,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </div>
       </Router>
