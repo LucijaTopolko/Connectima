@@ -1,7 +1,9 @@
 package connectima.backend.user.entity;
 
+import connectima.backend.pricing.entity.PricingType;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class User {
@@ -25,12 +27,25 @@ public class User {
     @Lob
     private String profilePicture;
 
-    private LocalDate membership;
+    private LocalDateTime membership;
+
+    private PricingType pricingType;
 
     private String password;
 
     public User() {
 
+    }
+
+    public User(String username, String email, String address, TypeOfUser typeOfUser, String profilePicture, LocalDateTime membership, PricingType pricingType, String password) {
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.typeOfUser = typeOfUser;
+        this.profilePicture = profilePicture;
+        this.membership = membership;
+        this.pricingType = pricingType;
+        this.password = password;
     }
 
     public Long getId() {
@@ -79,11 +94,11 @@ public class User {
         this.profilePicture = profilePicture;
     }
 
-    public LocalDate getMembership() {
+    public LocalDateTime getMembership() {
         return membership;
     }
 
-    public void setMembership(LocalDate membership) {
+    public void setMembership(LocalDateTime membership) {
         this.membership = membership;
     }
 
@@ -93,5 +108,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public PricingType getPricingType() {
+        return pricingType;
+    }
+
+    public void setPricingType(PricingType pricingType) {
+        this.pricingType = pricingType;
     }
 }

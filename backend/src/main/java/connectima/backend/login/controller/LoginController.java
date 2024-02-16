@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/login")
 public class LoginController {
 
@@ -30,17 +31,12 @@ public class LoginController {
 
     @PostMapping
     public ResponseEntity<LocalDTO> login(@RequestBody LoginDTO loginDTO) throws AuthenticationException {
-
+        User user = userService.login(loginDTO.getUsername());
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword()));
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtGenerator.generateToken(authentication);
-
-        User user = userService.login(loginDTO.getUsername());
-
         LocalDTO localDTO = new LocalDTO(token, user.getProfilePicture(), user.getTypeOfUser());
-
         return ResponseEntity.ok(localDTO);
     }
 
