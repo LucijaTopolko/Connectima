@@ -30,9 +30,9 @@ const Register = () => {
           return response.text();
         })
         .then((response) => {
-          localStorage.setItem("accessToken", response);
-          localStorage.setItem("profilePhoto", response.profilePhoto);
-          localStorage.setItem("typeOfUser", response.typeOfUser);
+          sessionStorage.setItem("accessToken", response);
+          sessionStorage.setItem("profilePhoto", response.profilePhoto);
+          sessionStorage.setItem("typeOfUser", response.typeOfUser);
           navigate("/");
         })
         .catch(() => {

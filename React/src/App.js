@@ -4,9 +4,9 @@ import Logout from "./components/scripts/Logout";
 import Login from "./components/scripts/Login";
 import Register from "./components/scripts/Register";
 import FAQ from "./components/scripts/FAQ";
+import CreateEvent from "./components/scripts/CreateEvent";
 
 function App() {
-  const accessToken = localStorage.getItem('accessToken');
 
   return (
       <Router>
@@ -17,6 +17,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/create-event" element={<CreateEvent />} />
           </Routes>
         </div>
       </Router>

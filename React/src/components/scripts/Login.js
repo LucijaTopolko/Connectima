@@ -19,12 +19,13 @@ const Login = () => {
           if (!response.ok) {
             throw new Error("Wrong username or password!");
           }
-          return response.text();
+          return response.json();
         })
         .then((response) => {
-          localStorage.setItem("accessToken", response.token);
-          localStorage.setItem("profilePhoto", response.profilePhoto);
-          localStorage.setItem("typeOfUser", response.typeOfUser);
+          console.log(response);
+          sessionStorage.setItem("accessToken", response.token);
+          sessionStorage.setItem("profilePhoto", response.profilePhoto);
+          sessionStorage.setItem("typeOfUser", response.typeOfUser);
           navigate("/");
         })
         .catch(() => {

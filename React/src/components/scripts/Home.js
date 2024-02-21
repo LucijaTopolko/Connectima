@@ -9,7 +9,7 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = sessionStorage.getItem('accessToken');
 
   useEffect(() => {
         if (accessToken == null) {
@@ -25,11 +25,14 @@ const Home = () => {
                     <div className="home-container3"></div>
                 </div>
                 <h1 className="home-text">Connectima: Gathering events in one click</h1>
-                <Event rootClassName="event-root-class-name3"></Event>
-                <Event rootClassName="event-root-class-name7"></Event>
-                <Event rootClassName="event-root-class-name6"></Event>
-                <Event rootClassName="event-root-class-name5"></Event>
-                <Event rootClassName="event-root-class-name4"></Event>
+                <Event
+                    id={1}
+                    date={"February 19, 2024"}
+                    photo={"profilePhoto.png"}
+                    city={"New York"}
+                    location={"Central Park"}
+                    name={"Central Park Music Festival"}
+                ></Event>
             </div>
             <Footer rootClassName="footer-root-class-name6"></Footer>
         </div>

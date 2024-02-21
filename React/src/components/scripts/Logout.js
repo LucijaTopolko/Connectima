@@ -5,7 +5,7 @@ function Logout() {
 
    const navigate = useNavigate();
 
-   localStorage.removeItem('accessToken');
+   sessionStorage.removeItem('accessToken');
 
    useEffect(() => {
       navigate('/login');

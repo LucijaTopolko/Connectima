@@ -8,7 +8,7 @@ import '../styles/Header.css'
 
 const Header = (props) => {
 
-    const profilePhoto = localStorage.getItem('profilePhoto');
+    const profilePhoto = sessionStorage.getItem('profilePhoto');
 
     return (
         <header
