@@ -62,12 +62,10 @@
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
-    color: #131b74;
 }
 .event div:nth-of-type(3) h3 {
     margin-top: 5px;
     font-family: "Roboto Slab", serif;
-    color: #131b74;
 }
 .event:hover div:nth-of-type(2) {
     height: 100%;
@@ -93,4 +91,8 @@
 
 img {
     object-fit: contain;
+}
+
+.hovered p{
+    font-family: sans-serif;
 }

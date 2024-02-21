@@ -7,7 +7,7 @@ const Event = ({id, date, photo, city, location, name}) => {
 
 
     const openEvent = (id) => {
-        window.location.href = `/event_${id}`;
+        window.location.href = `/event/${id}`;
     };
 
     return (
