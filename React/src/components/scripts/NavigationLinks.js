@@ -7,10 +7,10 @@ import '../styles/NavigationLinks.css'
 const NavigationLinks = (props) => {
     return (
         <nav className={`navigation-links-nav ${props.rootClassName} `}>
-            <span className="navigation-links-text">{props.text}</span>
-            <span className="navigation-links-text1">{props.text1}</span>
-            <span className="navigation-links-text2">{props.text2}</span>
-            <span className="navigation-links-text3">{props.text3}</span>
+            <a href="/explore"><span className="navigation-links-text">{props.text}</span></a>
+            <a href="/favorites"><span className="navigation-links-text1">{props.text1}</span></a>
+            <a href="/inbox"><span className="navigation-links-text2">{props.text2}</span></a>
+            <a href="/create-event"><span className="navigation-links-text3">{props.text3}</span></a>
         </nav>
     )
 }
@@ -18,9 +18,8 @@ const NavigationLinks = (props) => {
 NavigationLinks.defaultProps = {
     rootClassName: '',
     text: 'Explore',
-    text3: 'Create',
+    text3: 'Create event',
     text1: 'Favorites',
-    text4: 'Blog',
     text2: 'Inbox',
 }
 
@@ -29,7 +28,6 @@ NavigationLinks.propTypes = {
     text: PropTypes.string,
     text3: PropTypes.string,
     text1: PropTypes.string,
-    text4: PropTypes.string,
     text2: PropTypes.string,
 }
 
