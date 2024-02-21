@@ -1,11 +1,13 @@
 package connectima.backend.event.entity;
 
+import connectima.backend.user.repository.UserRepository;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import java.time.LocalDateTime;
 import java.lang.Long;
 import connectima.backend.user.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Entity
@@ -24,7 +26,7 @@ public class Event {
     @Column(nullable = false, length = 20)
     private String city;
 
-    @Column(nullable = false, length = 150)
+    @Column(length = 150)
     private String location;
 
     @Column(nullable = false)
@@ -38,12 +40,34 @@ public class Event {
     @Column(length = 300)
     private String description;
 
+    private Long organiserId;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "organiser", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "organiserId", insertable = false, updatable = false, nullable = false)
     private User organiser;
 
     public Event() {
+    }
+
+    public Event(String name, String type, String city, String location, LocalDateTime startingTime, LocalDateTime endingTime, Double ticketPrice, String description, Long organiserId) {
+        this.name = name;
+        this.type = type;
+        this.city = city;
+        this.location = location;
+        this.startingTime = startingTime;
+        this.endingTime = endingTime;
+        this.ticketPrice = ticketPrice;
+        this.description = description;
+        this.organiserId = organiserId;
+    }
+
+    public Long getOrganiserId() {
+        return organiserId;
+    }
+
+    public void setOrganiserId(Long organiserId) {
+        this.organiserId = organiserId;
     }
 
     public Long getId() {
