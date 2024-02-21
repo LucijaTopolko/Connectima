@@ -6,6 +6,7 @@ import Register from "./components/scripts/Register";
 import FAQ from "./components/scripts/FAQ";
 import CreateEvent from "./components/scripts/CreateEvent";
 import ShowEvent from "./components/scripts/ShowEvent";
+import ContactUs from "./components/scripts/ContactUs";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/create-event" element={<CreateEvent />} />
             <Route path="/event/:id" element={<ShowEvent />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Routes>
         </div>
       </Router>
