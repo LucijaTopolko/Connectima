@@ -7,6 +7,8 @@ import FAQ from "./components/scripts/FAQ";
 import CreateEvent from "./components/scripts/CreateEvent";
 import ShowEvent from "./components/scripts/ShowEvent";
 import ContactUs from "./components/scripts/ContactUs";
+import MyProfile from "./components/scripts/MyProfile";
+import AdminDashboard from "./components/scripts/AdminDashboard";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
             <Route path="/create-event" element={<CreateEvent />} />
             <Route path="/event/:id" element={<ShowEvent />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/my-profile" element={<MyProfile />} />
+            <Route path="/dashboard" element={<AdminDashboard />} />
           </Routes>
         </div>
       </Router>
