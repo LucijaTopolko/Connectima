@@ -9,7 +9,7 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-    const accessToken = sessionStorage.getItem('accessToken');
+    const accessToken = localStorage.getItem('accessToken');
 
   useEffect(() => {
         if (accessToken == null) {
