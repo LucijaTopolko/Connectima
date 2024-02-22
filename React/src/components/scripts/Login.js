@@ -22,11 +22,14 @@ const Login = () => {
           return response.json();
         })
         .then((response) => {
-          console.log(response);
           sessionStorage.setItem("accessToken", response.token);
           sessionStorage.setItem("profilePhoto", response.profilePhoto);
           sessionStorage.setItem("typeOfUser", response.typeOfUser);
-          navigate("/");
+          if (response.typeOfUser === 'ADMIN') {
+            navigate("/dashboard");
+          } else {
+            navigate("/");
+          }
         })
         .catch(() => {
           setUsername("");

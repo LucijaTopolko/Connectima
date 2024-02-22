@@ -4,12 +4,14 @@ import PropTypes from 'prop-types'
 
 import Search from '../scripts/Search'
 import NavigationLinks from '../scripts/NavigationLinks'
+import AdminLinks from '../scripts/AdminLinks'
 import '../styles/Header.css'
 import DropdownMenu from "./DropdownMenu";
 
 const Header = (props) => {
 
     const profilePhoto = sessionStorage.getItem('profilePhoto');
+    const typeOfUser = sessionStorage.getItem('typeOfUser');
 
     return (
         <header
@@ -17,10 +19,11 @@ const Header = (props) => {
             className={`header-header ${props.rootClassName} `}
         >
             <Search rootClassName="search-root-class-name" className=""></Search>
-            <NavigationLinks
-                rootClassName="rootClassName17"
-                className=""
-            ></NavigationLinks>
+            {typeOfUser !== 'ADMIN' ? (
+                <NavigationLinks rootClassName="rootClassName17" className=""></NavigationLinks>
+            ) : (
+                <AdminLinks rootClassName="rootClassName17" className=""></AdminLinks>
+            )}
             <div className="header-container"></div>
             <DropdownMenu/>
         </header>

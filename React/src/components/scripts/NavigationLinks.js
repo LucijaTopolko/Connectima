@@ -22,13 +22,4 @@ NavigationLinks.defaultProps = {
     text1: 'Favorites',
     text2: 'Inbox',
 }
-
-NavigationLinks.propTypes = {
-    rootClassName: PropTypes.string,
-    text: PropTypes.string,
-    text3: PropTypes.string,
-    text1: PropTypes.string,
-    text2: PropTypes.string,
-}
-
 export default NavigationLinks
