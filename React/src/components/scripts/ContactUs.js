@@ -25,7 +25,7 @@ const ContactUs = () => {
                         <div className="info-row">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAgVJREFUWEftmI1NAzEMRt1NYBJgEmASYBLoJMAksAn0oTNyXcd2TgVViEinFi6XPH/+ybkbObGxOTEe+TNAZyJyIyIXIsJ3rvdFbT65tiLyMuuBWYXuReRuYhMF47nW6AJdisjjokRrYTepDdYBilSxLlEX4TYGn9c7d2GE/k/5HnZfUrUqoOdlYV2wbekCQ5wBZ8GeROR2JHMG5JUhQK9W+EsTwMbeUKkREHKjjo7UqgZkBIVKrLs3RkBvRuZKGeC5GMwdpTpQqIQbGbj/vAPEA2SUjirOrGuroAUK5TWmDuZHm1l1QlmdVTNAPGoNPlDJA82qwwazQKiDB9TNJMq3mz0QE9XH3UCeBUqN8EC27nTctUYhnrFZvJc0HsjGDxmgB2aW2WsUwm3sdZBtHuhjIrt0qgXquvlHgXwiVKmvhoTGH8NlPo74u4JqK2SDei8dsyBa7vmzL4OyqqZBvSYeLKuHGhk1LC/eZTYdw7NmQqmsbNhsTgsj+9lg69Yiz2nfsf299DSIzrL0rGkoVE1Jz8oIyJ/I3dpSgXDfJk379cOfyJ007sDYQGZ+GPC/8QrrlUkNnHn50nOHBrDbZ0UdS/oGWgFFVVjBWBi4qA2ifEQNZVXB2739MRpFSkjZWncU0oCNOocqmGf6uK+1ZoDs5tWPDa9FBzI0ZC1Qpczq+/9AlXSf+xWTJXkSZ60AAAAASUVORK5CYII=" alt=""/>
                             <span className="info-label">Working Hours:</span>
-                            <span className="info-value" colSpan="2">Mon-Fri: 9am-5pm</span>
+                            <span className="info-value" colSpan="2">Mon-Fri: 8:00 - 16:00</span>
                         </div>
                     </div>
                 </div>
