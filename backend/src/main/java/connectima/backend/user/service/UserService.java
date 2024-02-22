@@ -53,4 +53,8 @@ public class UserService {
         }
         return dtos;
     }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
 }
