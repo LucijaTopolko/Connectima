@@ -2,27 +2,22 @@ package connectima.backend.user.service;
 
 import connectima.backend.login.controller.dto.AuthenticationException;
 import connectima.backend.pricing.entity.PricingType;
+import connectima.backend.security.auth.Convert;
 import connectima.backend.user.controller.dto.RegisterDTO;
 import connectima.backend.user.controller.dto.UserListDTO;
 import connectima.backend.user.entity.User;
 import connectima.backend.user.repository.UserRepository;
-import org.apache.commons.io.IOUtils;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-
-import org.springframework.core.io.Resource;
-
 
 @Service
 public class UserService {
@@ -31,10 +26,10 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    private ResourceLoader resourceLoader;
+    private Convert convert;
 
     public User login(String username) throws AuthenticationException {
 
@@ -56,5 +51,13 @@ public class UserService {
 
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Transactional
+    public String changePhoto(String token, MultipartFile photo) throws IOException {
+        User user = convert.convertToUser(token);
+        //user.setProfilePicture(Base64.getEncoder().encodeToString(photo.getBytes()));
+        userRepository.updateUserProfilePictureById(user.getId(), Base64.getEncoder().encodeToString(photo.getBytes()));
+        return user.getProfilePicture();
     }
 }
